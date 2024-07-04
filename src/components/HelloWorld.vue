@@ -7,10 +7,10 @@ defineProps<{
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h3>
+    <h4>
       Insights futuros. <br />
       Decisões inteligentes.
-    </h3>
+    </h4>
   </div>
 </template>
 
@@ -22,19 +22,31 @@ h1 {
   top: -10px;
 }
 
-h3 {
+h4 {
   font-size: 1.2rem;
 }
 
 .greetings h1,
-.greetings h3 {
+.greetings h4 {
   text-align: center;
 }
 
 @media (min-width: 1024px) {
   .greetings h1,
-  .greetings h3 {
+  .greetings h4 {
     text-align: left;
   }
+}
+</style>
+
+<style scoped>
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.welcome-items {
+  display: flex;
+  flex-direction: column;
 }
 </style>
