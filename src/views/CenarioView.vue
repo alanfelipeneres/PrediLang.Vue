@@ -5,5 +5,5 @@ import HeaderDefault from '../components/HeaderDefault.vue'
 
 <template>
   <HeaderDefault />
-  <h1>Template</h1>
+  <h1>Cenário</h1>
 </template>
