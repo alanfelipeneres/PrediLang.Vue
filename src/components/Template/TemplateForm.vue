@@ -1,0 +1,78 @@
+<template>
+  <div class="template-form">
+    <textarea v-model="description" rows="10" style="width: 100%"></textarea> <br />
+    <button @click="saveTemplate" style="float: right" class="btn btn-secondary">Salvar</button>
+    <br /><br />
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      description: ''
+    }
+  },
+  methods: {
+    saveTemplate() {
+      // Chame uma API ou emita um evento para salvar o template
+      this.$emit('save', this.description)
+      this.description = ''
+    }
+  }
+}
+</script>
+
+<style scoped>
+.template-form {
+  margin: 20px;
+}
+.template-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+/* .template-form button {
+  margin-top: 10px;
+  float: right;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.template-form button:hover {
+  background-color: #0056b3;
+} */
+
+@media (prefers-color-scheme: dark) {
+  .template-form textarea {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    border: 1px solid #555;
+  }
+
+  .template-form button {
+    background-color: #f8f9fa; /* Estilo de btn-light */
+    color: #212529; /* Estilo de btn-light */
+    border: 1px solid #dae0e5; /* Estilo de btn-light */
+  }
+
+  .btn.btn-secondary {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: white;
+  }
+
+  .btn.btn-secondary:hover {
+    background-color: #23272b;
+    border-color: #1d2124;
+    color: white;
+  }
+}
+</style>

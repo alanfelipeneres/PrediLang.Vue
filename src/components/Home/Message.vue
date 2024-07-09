@@ -37,9 +37,7 @@ h4 {
     text-align: left;
   }
 }
-</style>
 
-<style scoped>
 .main-container {
   display: flex;
   flex-direction: row;

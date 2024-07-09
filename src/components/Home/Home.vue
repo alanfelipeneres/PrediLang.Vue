@@ -1,18 +1,30 @@
-<script setup lang="ts">
-import WelcomeItem from './WelcomeItem.vue'
-import AppIcon from './icons/IconApp.vue'
-import TimeIcon from './icons/IconTime.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import CheckIcon from './icons/IconCheck.vue'
-import HeaderLogo from './HeaderLogo.vue'
+<script>
+import MessageItem from './MessageItem.vue'
+import AppIcon from '../icons/IconApp.vue'
+import TimeIcon from '../icons/IconTime.vue'
+import EcosystemIcon from '../icons/IconEcosystem.vue'
+import CommunityIcon from '../icons/IconCommunity.vue'
+import CheckIcon from '../icons/IconCheck.vue'
+import HeaderLogo from '../Header/HeaderLogo.vue'
+
+export default {
+  components: {
+    MessageItem,
+    AppIcon,
+    TimeIcon,
+    EcosystemIcon,
+    CommunityIcon,
+    CheckIcon,
+    HeaderLogo
+  }
+}
 </script>
 
 <template>
   <div class="main-container">
     <HeaderLogo />
     <div>
-      <WelcomeItem>
+      <MessageItem>
         <template #icon>
           <AppIcon />
         </template>
@@ -21,9 +33,9 @@ import HeaderLogo from './HeaderLogo.vue'
         Aplicação desenvolvida com o objetivo de servir como validação de conceito para o artigo
         'Uma Ferramenta de Apoio a Estudos de Futuro Utilizando Linguagem Natural', escrito pelo
         mestrando Alan Felipe de Lima Neres, sob a orientação do professor Dr. Edilson Feneda.
-      </WelcomeItem>
+      </MessageItem>
 
-      <WelcomeItem>
+      <MessageItem>
         <template #icon>
           <TimeIcon />
         </template>
@@ -32,9 +44,9 @@ import HeaderLogo from './HeaderLogo.vue'
         A aplicação utiliza técnicas avançadas de Processamento de Linguagem Natural (PLN) para
         conduzir estudos de futuros, que são metodologias voltadas para a análise e previsão de
         possíveis cenários futuros.
-      </WelcomeItem>
+      </MessageItem>
 
-      <WelcomeItem>
+      <MessageItem>
         <template #icon>
           <EcosystemIcon />
         </template>
@@ -43,9 +55,9 @@ import HeaderLogo from './HeaderLogo.vue'
         A criação de cenários é um componente essencial para a previsão e planejamento estratégico,
         permitindo que os usuários explorem diferentes possibilidades e preparem-se para diversas
         eventualidades.
-      </WelcomeItem>
+      </MessageItem>
 
-      <WelcomeItem>
+      <MessageItem>
         <template #icon>
           <CommunityIcon />
         </template>
@@ -54,9 +66,9 @@ import HeaderLogo from './HeaderLogo.vue'
         O Processamento de Linguagem Natural (PLN) é a base tecnológica da aplicação. Utilizando
         técnicas avançadas de PLN, a aplicação transforma dados brutos em insights acionáveis, que
         são essenciais para os estudos de futuros e a criação de cenários.
-      </WelcomeItem>
+      </MessageItem>
 
-      <WelcomeItem>
+      <MessageItem>
         <template #icon>
           <CheckIcon />
         </template>
@@ -64,7 +76,7 @@ import HeaderLogo from './HeaderLogo.vue'
 
         <a href="/template" rel="noopener">Clique aqui</a> para acessar a aplicação e receber
         insights futuros de forma descomplicada.
-      </WelcomeItem>
+      </MessageItem>
     </div>
   </div>
 </template>
@@ -73,10 +85,6 @@ import HeaderLogo from './HeaderLogo.vue'
 .main-container {
   display: flex;
   flex-direction: row;
+  place-items: center;
 }
-
-/* .welcome-items {
-  display: flex;
-  flex-direction: column;
-} */
 </style>

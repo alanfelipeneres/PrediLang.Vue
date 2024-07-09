@@ -84,3 +84,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.body-center {
+  display: flex;
+  place-items: center;
+}
+
+.body-flow {
+  display: flow;
+}
