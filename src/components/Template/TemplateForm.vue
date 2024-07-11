@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import templateService from '../../services/TemplateService.js'
+
 export default {
   data() {
     return {
@@ -14,7 +16,14 @@ export default {
     }
   },
   methods: {
-    saveTemplate() {
+    async saveTemplate() {
+      try {
+        var response = await templateService.getAll()
+        console.log(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+
       // Chame uma API ou emita um evento para salvar o template
       this.$emit('save', this.description)
       this.description = ''
@@ -36,19 +45,6 @@ export default {
   border-radius: 4px;
   resize: none;
 }
-/* .template-form button {
-  margin-top: 10px;
-  float: right;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.template-form button:hover {
-  background-color: #0056b3;
-} */
 
 @media (prefers-color-scheme: dark) {
   .template-form textarea {
