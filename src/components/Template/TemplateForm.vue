@@ -15,18 +15,21 @@ export default {
       description: ''
     }
   },
+  async mounted() {
+    try {
+      var response = await templateService.getAll()
+      var template = response.data.data[0].descricao
+      if (response.data) this.description = template.replace(/\\n/g, '\n')
+    } catch (error) {
+      console.log(error)
+    }
+  },
   methods: {
     async saveTemplate() {
-      try {
-        var response = await templateService.getAll()
-        console.log(response.data)
-      } catch (error) {
-        console.log(error)
-      }
+      alert('Save')
 
       // Chame uma API ou emita um evento para salvar o template
-      this.$emit('save', this.description)
-      this.description = ''
+      //this.$emit('save', this.description)
     }
   }
 }
