@@ -12,24 +12,29 @@ import templateService from '../../services/TemplateService.js'
 export default {
   data() {
     return {
-      description: ''
+      description: '',
+      idTemplate: this.$route.params.idTemplate
     }
   },
   async mounted() {
     try {
-      var response = await templateService.getAll()
-      var template = response.data.data[0].descricao
-      if (response.data) this.description = template.replace(/\\n/g, '\n')
+      if (this.idTemplate) {
+        var template = await templateService.getById(this.idTemplate)
+        if (template) this.description = template.descricao.replace(/\\n/g, '\n')
+      }
     } catch (error) {
       console.log(error)
     }
   },
   methods: {
     async saveTemplate() {
-      alert('Save')
+      var template = {
+        idTemplate: templateEnum.DEFAULT,
+        descricao: this.description,
+        usuario: 'alan.neres'
+      }
 
-      // Chame uma API ou emita um evento para salvar o template
-      //this.$emit('save', this.description)
+      templateService.put(template)
     }
   }
 }

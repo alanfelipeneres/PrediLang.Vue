@@ -12,16 +12,17 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/template',
+      path: '/template/:idTemplate?',
       name: 'template',
-      component: TemplateView
+      component: TemplateView,
+      props: true
     },
     {
       path: '/cenario',
       name: 'cenario',
       component: CenarioView
     }
-  ]
+]
 })
 
 export default router
